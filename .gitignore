@@ -23,8 +23,10 @@
 *.bcf
 *.glsdefs
 *.xml
-*.xdy 
+*.xdy
 ._*
 *.synctex(busy)
 *.synctex.gz
 !**/img/*.pdf
+*.ilg
+*.ind

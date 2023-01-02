@@ -6,28 +6,28 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	ANLEITUNG: 
+%	ANLEITUNG:
 %   1. Ersetzen Sie firmenlogo.jpg im Verzeichnis img
-%   2. Passen Sie alle Stellen im Dokument an, die mit 
-%      @stud 
+%   2. Passen Sie alle Stellen im Dokument an, die mit
+%      @stud
 %      markiert sind
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	ACHTUNG: 
-%   Für das Erstellen des Literaturverzeichnisses wird das 
-%   modernere Paket biblatex in Kombination mit biber 
+%	ACHTUNG:
+%   Für das Erstellen des Literaturverzeichnisses wird das
+%   modernere Paket biblatex in Kombination mit biber
 %   verwendet - nicht mehr das ältere Paket BibTex!
 %
-%   Bitte stellen Sie Ihre TeX-Umgebung entsprechend ein (z.B. TeXStudio): 
+%   Bitte stellen Sie Ihre TeX-Umgebung entsprechend ein (z.B. TeXStudio):
 %   Einstellungen --> Erzeugen --> Standard Bibliographieprogramm: biber
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[fontsize=12pt,BCOR=5mm,DIV=12,parskip=half,listof=totoc,
                paper=a4,toc=bibliography,pointlessnumbers]{scrreprt}
-               
+
                %toc=listof,listof=entryprefix,
-               
+
 \makeindex
 
 %% Elementare Pakete, Konfigurationen und Definitionen werden geladen (gegebenenfalls anpassen)
@@ -56,42 +56,42 @@
 %% @stud
 %%
 %% BIBLIOGRAPHY (@stud: Bibliographie-Stil wählen - Position und Indizierung)
-%%  Auswahl zwischen: 
+%%  Auswahl zwischen:
 %%   NUMERIC Style
 %%   IEEE Style
 %%   ALPHABETIC Style
 %%   HARVARD Style
-%%   CHICAGO Style 
-%%   (oder eigenen zulässigen Stil wählen) 
+%%   CHICAGO Style
+%%   (oder eigenen zulässigen Stil wählen)
 %%
 %%%%%%%%%%%%%
 %% Zitierstil
 %%%%%%%%%%%%%
 % NUMERIC Style - e. g. [12]
-%\newcommand{\indextype}{numeric} 
+%\newcommand{\indextype}{numeric}
 %
-% IEEE Style - numeric kind of style 
-%\newcommand{\indextype}{ieee} 
+% IEEE Style - numeric kind of style
+%\newcommand{\indextype}{ieee}
 %
 % ALPHABETIC Style - e. g. [AB12]
-\newcommand{\indextype}{alphabetic} 
+\newcommand{\indextype}{alphabetic}
 %
-% HARVARD Style 
-%\newcommand{\indextype}{apa} 
+% HARVARD Style
+%\newcommand{\indextype}{apa}
 %
-% CHICAGO Style 
+% CHICAGO Style
 %\newcommand{\indextype}{authoryear}
 %
 %%%%%%%%%%%%%%%%%%%%%%
 %% Position des Zitats
 %%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\position}{inline} 
+\newcommand{\position}{inline}
 %
 % (!!) FOOTNOTE POSITION NOT RECOMMENDED IN MINT DOMAIN:
 %\newcommand{\position}{footnote}
 
 %% Final: Setzen des Zitierstils und der Zitatposition
-\usepackage[backend=biber, autocite=\position, style=\indextype]{biblatex} 	
+\usepackage[backend=biber, autocite=\position, style=\indextype]{biblatex}
 \settingBibFootnoteCite
 
 %%
@@ -109,14 +109,16 @@
 \begin{document}
 
 \setTitlepage
+\addcontentsline{toc}{chapter}{Titelseite}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EHRENWÖRTLICHE ERKLÄRUNG
 %
 % @stud: ewerkl.tex bearbeiten
 %
-\input{ewerkl} 
-\cleardoublepage  
+\input{ewerkl}
+\addcontentsline{toc}{chapter}{Ehrenwörtliche Erklärung}
+\cleardoublepage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -124,7 +126,8 @@
 %
 % @stud: nondisclosurenotice.tex bearbeiten
 %
-\input{nondisclosurenotice} 
+\input{nondisclosurenotice}
+\addcontentsline{toc}{chapter}{Sperrvermerk}
 \cleardoublepage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -134,7 +137,8 @@
 % @stud: acknowledge.tex bearbeiten
 %
 \input{acknowledge}
-\cleardoublepage 
+\addcontentsline{toc}{chapter}{Danksagung}
+\cleardoublepage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -143,6 +147,7 @@
 % @stud: ggf. nicht benötigte Verzeichnisse auskommentieren/löschen
 %
 \tableofcontents
+\addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
 \cleardoublepage
 
 % Abbildungsverzeichnis
@@ -167,12 +172,15 @@
 
 % Abkürzungsverzeichnis
 % @stud: acronyms.tex bearbeiten
-\input{acronyms} 
+\input{acronyms}
 \cleardoublepage
+
+% 1,5 Zeilenabstand schon ab dem Abstrakt
+\onehalfspacing
 
 %	Kurzfassung / Abstract
 % @stud: abstract.tex bearbeiten
-\input{abstract} 
+\input{abstract}
 \cleardoublepage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -184,7 +192,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \initializeText
-\onehalfspacing
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % KAPITEL
@@ -205,7 +212,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ANHÄNGE
 %
-% @stud: einzelne Anhänge bearbeiten und eigene Anhänge hier einfügen 
+% @stud: einzelne Anhänge bearbeiten und eigene Anhänge hier einfügen
 %        die nachfolgenden Zeilen deaktivieren, wenn keine Anhänge verwendet werden
 %
 \initializeAppendix
@@ -217,7 +224,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LITERATURVERZEICHNIS
-% @stud: Literaturverzeichnis in Datei bibliography.bib anpassen. 
+% @stud: Literaturverzeichnis in Datei bibliography.bib anpassen.
 %
 % Alternative zu Verwendung von \initializeBibliography: Citavi ...
 % (dann \initializeBibliography auskommentieren und eigenes LaTex Coding verwenden)
