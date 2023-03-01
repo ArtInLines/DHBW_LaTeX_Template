@@ -1,9 +1,9 @@
 % !TEX root =  master.tex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	ANLEITUNG: 
-% Passen Sie gegebenenfalls alle Stellen im Dokument an, die mit 
-% @stud 
+%	ANLEITUNG:
+% Passen Sie gegebenenfalls alle Stellen im Dokument an, die mit
+% @stud
 % markiert sind.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -24,7 +24,7 @@
 \usepackage{caption}	                % better Captions
 \usepackage{booktabs}                 % nicer Tabs
 \usepackage[hidelinks=true]{hyperref} % keine roten Markierungen bei Links
-\usepackage{fnpct}                    % Correct superscripts 
+\usepackage{fnpct}                    % Correct superscripts
 \usepackage{calc}                     % Used for extra space below footsepline, in particular
 \usepackage{array}
 \usepackage{acronym}
@@ -32,6 +32,7 @@
 \usepackage{algpseudocode}
 \usepackage{setspace}
 \usepackage{tocloft}
+\usepackage{tikz}					  % Used for drawing directly in LaTeX
 
 %% Schriftarten- und Zeichenpakete
 \usepackage[T1]{fontenc}
@@ -44,14 +45,14 @@
 %%%%%%%%%%%%%
 %% SCHRIFTART
 %%%%%%%%%%%%%
-% 0) without decomment: normal font families 
+% 0) without decomment: normal font families
 % ...
-% 1) Latin Modern 
-%\usepackage{lmodern}        
-% 2) Times 
-%\usepackage{mathptmx}         
+% 1) Latin Modern
+%\usepackage{lmodern}
+% 2) Times
+%\usepackage{mathptmx}
 % 3) Helvetica
-%\usepackage[scaled=.92]{helvet} 
+%\usepackage[scaled=.92]{helvet}
 %%%%%%%%%%%%%%%%%%
 %%	SCHRIFTFAMILIE
 %%%%%%%%%%%%%%%%%%
@@ -70,7 +71,7 @@
 %%
 %% @stud
 %%
-%% Uncomment the following lines to support hard URL breaks in bibliography 
+%% Uncomment the following lines to support hard URL breaks in bibliography
 %\apptocmd{\UrlBreaks}{\do\f\do\m}{}{}
 %\setcounter{biburllcpenalty}{9000}% Kleinbuchstaben
 %\setcounter{biburlucpenalty}{9000}% Großbuchstaben
@@ -89,7 +90,7 @@
 
 %	LISTINGS
 % @stud: ggf. Namen/Text anpassen (englisch)
-\renewcommand{\lstlistingname}{Quelltext} 
+\renewcommand{\lstlistingname}{Quelltext}
 \renewcommand{\lstlistlistingname}{Quelltextverzeichnis}
 \lstset{numbers=left,
 	numberstyle=\tiny,
@@ -138,7 +139,7 @@
 \newcommand{\setTitlepage}{
 	\input{titlepage}
 	\pagenumbering{roman} % Römische Seitennummerierung
-	\normalfont	
+	\normalfont
 }
 
 \newcommand{\initializeText}{
@@ -149,7 +150,7 @@
 
 \newcommand{\initializeBibliography}{
 	\ihead{}
-	\printbibliography[title=\Literaturverzeichnis] 
+	\printbibliography[title=\Literaturverzeichnis]
 	\cleardoublepage
 }
 
